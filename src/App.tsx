@@ -12,7 +12,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
   const [editingTask, setEditingTask] = useState<Task | null>(null);
 
-  // BUG 1: 统计卡片故意使用初始 mockTasks，而不是当前 tasks
+
   const statsSource = mockTasks;
 
   const searchedTasks = useMemo(() => {
@@ -39,7 +39,7 @@ function App() {
     return tasks.filter((task) => task.status === activeFilter);
   }, [activeFilter, tasks]);
 
-  // BUG 2: 最终渲染只优先用了 search 或 filter，没有正确叠加
+
   const visibleTasks = search ? searchedTasks : filteredTasks;
 
   const handleToggleStatus = (id: string) => {
@@ -67,7 +67,7 @@ function App() {
     setTasks((prev) => {
       const next = [...prev];
 
-      // BUG 3: 故意错误地使用固定索引更新，而不是按 id 更新
+
       next[0] = updatedTask;
 
       return next;
@@ -76,7 +76,7 @@ function App() {
     setEditingTask(null);
   };
 
-  // BUG 4: 空状态判断故意基于 filteredTasks，而不是最终 visibleTasks
+
   const shouldShowEmpty = filteredTasks.length === 0;
 
   return (
