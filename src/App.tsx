@@ -12,6 +12,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
   const [editingTask, setEditingTask] = useState<Task | null>(null);
 
+
   const statsSource = tasks;
 
   const visibleTasks = useMemo(() => {
@@ -66,6 +67,7 @@ function App() {
 
     setEditingTask(null);
   };
+
 
   const shouldShowEmpty = visibleTasks.length === 0;
 
