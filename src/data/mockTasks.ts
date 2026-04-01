@@ -1,0 +1,58 @@
+import type { Task } from '../types';
+
+export const mockTasks: Task[] = [
+  {
+    id: 'task-1',
+    title: 'Design onboarding flow',
+    description: 'Refine the first-time user onboarding experience for the dashboard.',
+    assignee: 'Ava',
+    dueDate: '2026-04-03',
+    status: 'in-progress',
+    priority: 'high',
+  },
+  {
+    id: 'task-2',
+    title: 'Fix notification dropdown',
+    description: 'Resolve the interaction glitch in the notification popover.',
+    assignee: 'Leo',
+    dueDate: '2026-04-05',
+    status: 'done',
+    priority: 'medium',
+  },
+  {
+    id: 'task-3',
+    title: 'Update task analytics copy',
+    description: 'Revise labels and helper text in the analytics section.',
+    assignee: 'Mia',
+    dueDate: '2026-04-06',
+    status: 'in-progress',
+    priority: 'low',
+  },
+  {
+    id: 'task-4',
+    title: 'Prepare release checklist',
+    description: 'Create a checklist for the next internal release candidate.',
+    assignee: 'Noah',
+    dueDate: '2026-04-08',
+    status: 'done',
+    priority: 'high',
+  },
+  {
+    id: 'task-5',
+    title: 'Audit empty states',
+    description: 'Review empty state copy and visuals across task views.',
+    assignee: 'Emma',
+    dueDate: '2026-04-10',
+    status: 'in-progress',
+    priority: 'medium',
+  },
+  {
+    id: 'task-6',
+    title: 'Document API changes',
+    description: 'Summarize recent API contract updates for the frontend team.',
+    assignee: 'Liam',
+    dueDate: '2026-04-12',
+    status: 'done',
+    priority: 'low',
+  },
+];
