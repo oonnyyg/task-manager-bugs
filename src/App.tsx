@@ -12,6 +12,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
   const [editingTask, setEditingTask] = useState<Task | null>(null);
 
+
   const statsSource = tasks;
 
   const searchedTasks = useMemo(() => {
@@ -30,15 +31,13 @@ function App() {
     });
   }, [search, tasks]);
 
-  const filteredTasks = useMemo(() => {
+  const visibleTasks = useMemo(() => {
     if (activeFilter === 'all') {
       return searchedTasks;
     }
 
     return searchedTasks.filter((task) => task.status === activeFilter);
   }, [activeFilter, searchedTasks]);
-
-  const visibleTasks = filteredTasks;
 
   const handleToggleStatus = (id: string) => {
     setTasks((prev) =>
